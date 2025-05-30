@@ -18,7 +18,7 @@ export default function ProtectedLayout() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
         name="player"
-        options={{ headerShown: true, animation: "fade_from_bottom" }}
+        options={{ headerShown: false, animation: "fade_from_bottom" }}
       />
     </Stack>
   );
