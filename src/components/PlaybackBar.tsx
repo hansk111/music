@@ -19,19 +19,18 @@ export default function PlaybackBar({
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
   const onHandleSeek = (event: GestureResponderEvent) => {
     const pressX = event.nativeEvent.locationX;
-
+    console.log("pressX", pressX);
     const percentage = pressX / width;
-
     const seekToSeconds = Math.min(
       Math.max(duration * percentage, 0),
       duration
     );
-
+    console.log("seekToSeconds", seekToSeconds);
     onSeek(seekToSeconds);
   };
 
