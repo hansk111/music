@@ -5,14 +5,14 @@ import { Tabs } from "expo-router";
 
 export default function TabsLayout() {
   return (
-      <Tabs
-        tabBar={(props) => (
+    <Tabs
+      tabBar={(props) => (
         <>
           <FloatingPlayer />
           <BottomTabBar {...props} />
         </>
       )}
-      >
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -39,6 +39,16 @@ export default function TabsLayout() {
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings" size={size} color={color} />
+          ),
+          // headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="mp3player"
+        options={{
+          title: "mp3_player",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="folder-open-sharp" size={size} color={color} />
           ),
           // headerShown: false,
         }}
